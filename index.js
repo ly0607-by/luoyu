@@ -92,22 +92,41 @@
         'left': -index * 1170
     });
 });
-    /*返回顶部*/
-    //点击事件
-    $(document).scroll(function(){
-        //获取距离顶部的位置
-        var topDistance = $('html,body').scrollTop();
-        //判断
-        if(topDistance > 500){
-            $('.backToTop').fadeIn();
-        }else{
-            $('.backToTop').fadeOut();
-        }
-    });
-    //返回顶部功能
-    $('.backToTop').click(function(){
-        $('html,body').animate({
-            scrollTop:0
-        },300)
+    /*二维码划出效果 */
+    $('.qr-code .ticket').hover(function() {
+        // 让二维码划出来
+        $('.qr-code div').stop(true).animate({
+            left:'-100px'
+        })
+    },function (){
+        // 让二维码收回去
+        $('.qr-code div').stop(true).animate({
+            left:0
+        })
     })
+    /* 顶部搜索框交互 */
+    $(document).scroll(function (){
+        // 获取到顶部得距离
+        var topDistance = $('body').scrollTop();
+        // 判断
+        if(topDistance > 500) {
+            // 如果滚动距离大于500 滑下去
+            $('.top-search-box').slideDown(300)
+        }else{
+            // 反之收回
+            $('.top-search-box').slideUp(300)
+        }
+    })
+    /* 楼层跳转 */
+		$('.floor li').click(function(){
+			//获取索引
+			var index = $(this).index();
+			//选中每一个板块到顶部的偏移
+			var topOffset = $('.floorBox').eq(index).offset().top;
+			
+			//让滚动条滚到这个位置
+			$('body').animate({
+				scrollTop:topOffset - 50
+			})
+		})
  })
