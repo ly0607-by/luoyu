@@ -1,0 +1,52 @@
+/* 购物车 */
+.shopcart {
+    height: 630px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/* 全部商品 */
+.shopcart h3{
+    font-size: 24px;
+    color: #ff6700;
+    text-indent: 20px;
+    font-weight: 500;
+}
+/* 购物车表格 */
+.shopcart table {
+    height: 500px;
+    width: 1200px;
+    text-align: center;
+}
+/* 全选表格 */
+.shopcart table thead tr th{
+    height: 60px;
+    background-color: #f1f1f1;
+}
+/* 总价 */
+.shopcart .totalPrice{
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+}
+/* 总价中的span */
+.shopcart .totalPrice span{
+    margin-right: 150px;
+}
+/* 总价中的input */
+.shopcart .totalPrice span:first-of-type{
+    margin-left: 100px;
+}.shopcart .totalPrice{
+    margin-left: 10px;
+}
+
+/* 数量加减号 */
+.shopcart table button{
+    width: 20px;
+    height: 20px;
+}
+/* 数量显示框 */
+.shopcart table input{
+    width: 50px;
+}
